@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grade 2</title>
+        <link rel="stylesheet" href="tutorial.css">
+    </head>
+    <body>
+        <img src="/Hackathon-main/Hackathon/assets/images/academy_bg.jpg" id="image-bg">
+        <div class="math-container">
+            <h1 id="tutorial-text"></h1>
+            
+            <div id="character-container" class="character-container">
+                <button class="character-btn frog-character" data-character="0">
+                    <span class="char-emoji">🐸</span>
+                    <span class="char-name">Frog</span>
+                </button>
+                <button class="character-btn butterfly-character" data-character="1">
+                    <span class="char-emoji">🦋</span>
+                    <span class="char-name">Butterfly</span>
+                </button>
+                <button class="character-btn bunny-character" data-character="2">
+                    <span class="char-emoji">🐰</span>
+                    <span class="char-name">Bunny</span>
+                </button>
+            </div>
+            <button id="next-button">Next</button>
+        </div>
+
+        <div id="empty-health-container-character"></div>
+        <div class="health-bar" id="character-health"></div>
+
+        <div id="empty-health-container-enemy"></div>
+        <div class="health-bar" id="enemy-health"></div>
+
+        <div id="battle-container">
+
+        </div>
+
+        <div class="battle-buttons">
+            <button id="hit-button">Hit</button>
+            <button id="block-button">Block</button>
+            <button id="rest-button">Rest</button>
+        </div>
+
+        <script src="tutorial 2.js"></script>
+    </body>
+</html>

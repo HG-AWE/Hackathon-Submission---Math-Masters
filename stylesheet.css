@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ffb041;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+
+#video-bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    object-fit: cover;
+}
+
+#title-text{
+    color: #eeeeee; /* Light grey for contrast */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for uniformity */
+    font-size: 17vh;
+    text-shadow: 3 -1px 5px #f0f0f0, /* Innermost layer - intense heat (white) */
+    0 -1px 8px #ff0,  /* Middle layer - hot (yellow) */
+    0 -1px 15px #f00;  /* Outermost layer - cool (red) */
+    animation: flicker 2s infinite alternate; /* Animation to simulate flickering */
+}
+
+@keyframes  flicker {
+    0% {
+      text-shadow:
+        0 3px 20px red,
+        0 0 20px rgb(255, 86, 86),
+        0 0 10px orange,
+        0 0 0 yellow,
+        0 0 5px yellow,
+        -2px -5px 5px yellow,
+        4px -10px 10px yellow;
+    }
+    25% {
+      text-shadow:
+        0 3px 20px red,
+        0 0 30px red,
+        0 0 20px orange,
+        0 0 5px yellow,
+        -2px -5px 5px yellow,
+        3px -10px 10px rgb(253, 253, 153),
+        -4px -15px 20px yellow;
+    }
+    50% {
+      text-shadow:
+        0 3px 20px red,
+        0 0 20px red,
+        0 -5px 10px orange,
+        -2px -5px 5px rgb(255, 255, 163),
+        3 -10px 10px yellow,
+        -4px -15px 20px yellow,
+        2px -20px 30px rgba(255,255,0,0.5);
+    }
+    75% {
+      text-shadow:
+        0 3px 20px rgb(243, 77, 77),
+        0 0 20px red,
+        0 -5px 10px orange,
+        3 -5px 5px yellow,
+        -4px -10px 10px yellow,
+        2px -20px 30px rgba(255,255,0,0.5),
+        0 -25px 40px rgba(255,255,0,0);
+    }
+    100% {
+      text-shadow:
+        0 3px 20px red,
+        0 0 20px red,
+        0 0 10px rgb(241, 197, 116),
+        0 0 0 yellow,
+        0 0 5px yellow,
+        -2px -5px 5px yellow,
+        4px -10px 10px yellow;
+    }
+  }
+
+.container {
+    width: 30vw;
+    margin: 50px auto;
+    position: absolute;
+    
+    background: white;
+    padding: 20px;
+    
+    border-color: #0056b3;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    transition: width 1s ease-in-out height 1s ease-in-out;
+
+}
+
+.container.expand {
+    animation: expandContainer 1s forwards;
+}
+
+@keyframes expandContainer {
+    from {
+        width: 600px;
+        height: 170px;
+    }
+    to {
+        width: 75%;
+        height: 35vh;
+    }
+}
+
+h1, h2 {
+    color: #333;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.hidden {
+    display: none;
+}
+
+#options-container button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#options-container button:hover {
+    background-color: #0056b3;
+}
+
+#score {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #555;
+}
+
+.grade-btn {
+    width: 9vw;
+    margin-top: -1.45vh;
+    height: 17vh;
+    border-radius: 60px; 
+    padding: 20px;
+    position: absolute;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    visibility: hidden;
+    table-layout:fixed
+}
+
+.grade-btn:hover {
+    background: rgba(0, 191, 255, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#grade-1-btn {
+    left: 13.5vw;
+    top: 50vh;
+    background-color: #f54343;
+    border: 10px solid #b70707; 
+}
+
+#grade-2-btn {
+    left: 28.5vw;
+    top: 50vh;
+    background-color: #fff021;
+    border: 10px solid #928a13; 
+}
+
+#grade-3-btn {
+    left: 43.5vw;
+    top: 50vh;
+    background-color: #21ff21;
+    border: 10px solid #149214; 
+
+}
+
+#grade-4-btn {
+    left: 58.5vw;
+    top: 50vh;
+    background-color: #21fff4;
+    border: 10px solid #0b8680; 
+}
+
+#grade-5-btn {
+    left: 73.5vw;
+    top: 50vh;
+    background-color: #3721ff;
+    border: 10px solid #1c1086; 
+}
+
+.fade-in {
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%); /* Start from below the screen */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(5%); /* Move to the center */
+    }
+}
